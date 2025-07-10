@@ -19,7 +19,7 @@ use super::*;
 ///
 /// См. <https://yookassa.ru/developers/api#payment_object>.
 #[allow(dead_code)]
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct ResponsePayment {
     /// Уникальный идентификатор платежа в YooKassa (пример: `29d9f131-000f-5000-9000-19420bb5e410`).
     pub id: String,
