@@ -97,14 +97,14 @@ pub struct ResponsePayment {
 #[allow(dead_code)]
 #[derive(Deserialize, Debug)]
 pub struct ResponsePayments {
-    /// Тип объекта ответа. Для списков всегда `list`.
+    
     pub r#type: String,
 
-    /// Курсор для получения следующей страницы результатов.
-    pub next_cursor: String,
 
-    /// Коллекция объектов [`ResponsePayment`].
-    pub items: Vec<ResponsePayment>,
+    pub event: String,
+
+    
+    pub object: ResponsePayment,
 }
 
 /// Детали сохранённого способа оплаты, использованного клиентом.
