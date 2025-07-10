@@ -5,6 +5,7 @@ use crate::auth::Authentication;
 use std::sync::Arc;
 use crate::api::client::DEFAULT_CLIENT;
 
+#[derive(Clone)]
 pub struct YookassaClient<S: Authentication> {
     pub client: Arc<Client>,
     pub auth: S
