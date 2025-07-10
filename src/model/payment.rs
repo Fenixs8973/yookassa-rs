@@ -95,7 +95,7 @@ pub struct ResponsePayment {
 ///
 /// Используется в ответах на запрос `GET /payments`.
 #[allow(dead_code)]
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct ResponsePayments {
     
     pub r#type: String,
