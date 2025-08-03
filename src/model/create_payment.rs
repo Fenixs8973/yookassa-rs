@@ -102,6 +102,20 @@ pub struct Receipt {
     pub receipt_operational_details: Option<Operation>,
 }
 
+impl Default for Receipt {
+    fn default() -> Self {
+        Self {
+            customer: None,
+            items: vec![],
+            phone: None,
+            email: None,
+            tax_system_code: None,
+            receipt_industry_details: None,
+            receipt_operational_details: None,
+        }
+    }
+}
+
 /// Информация о покупателе.
 #[allow(dead_code)]
 #[derive(Deserialize, Serialize, Debug)]
