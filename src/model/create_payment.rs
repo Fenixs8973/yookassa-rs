@@ -118,7 +118,7 @@ impl Default for Receipt {
 
 /// Информация о покупателе.
 #[allow(dead_code)]
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Deserialize, Serialize, Debug, Default)]
 pub struct Customer {
     /// Ф. И. О.
     pub full_name: Option<String>,
