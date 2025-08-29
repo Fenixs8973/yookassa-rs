@@ -1,8 +1,8 @@
-use std::collections::HashMap;
+use super::*;
 use rust_decimal::Decimal;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
-use super::*;
+use std::collections::HashMap;
 
 /// Параметры создания платежа (`POST /v3/payments`).
 ///
@@ -132,7 +132,7 @@ pub struct Customer {
 
 /// Позиция чека.
 #[allow(dead_code)]
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Deserialize, Serialize, Debug, Default)]
 pub struct Items {
     /// Название товара/услуги.
     pub description: Option<String>,
@@ -162,7 +162,7 @@ pub struct Items {
 
 /// Расширенный блок количества маркированного товара.
 #[allow(dead_code)]
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Deserialize, Serialize, Debug, Default)]
 pub struct MarkQuantity {
     /// Числитель дроби.
     pub numerator: i32,
@@ -178,7 +178,7 @@ pub struct MarkQuantity {
 
 /// Представление разных форматов штрих-кода/UCN.
 #[allow(dead_code)]
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Deserialize, Serialize, Debug, Default)]
 pub struct MarkCode {
     pub mark_code_raw: Option<String>,
     pub unknown: Option<String>,
@@ -195,7 +195,7 @@ pub struct MarkCode {
 
 /// Отраслевой признак/пара «ключ-значение».
 #[allow(dead_code)]
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Deserialize, Serialize, Debug, Default)]
 pub struct Industry {
     /// Код федерального закона/ведомства.
     pub federal_id: String,
@@ -209,7 +209,7 @@ pub struct Industry {
 
 /// Операционные реквизиты чека.
 #[allow(dead_code)]
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Deserialize, Serialize, Debug, Default)]
 pub struct Operation {
     pub operation_id: i32,
     pub value: String,
@@ -218,7 +218,7 @@ pub struct Operation {
 
 /// Данные авиаперелёта (Airline Addendum).
 #[allow(dead_code)]
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Deserialize, Serialize, Debug, Default)]
 pub struct Airline {
     /// Номер билета (талоны IATA 13 цифр).
     pub ticket_number: Option<String>,
@@ -232,7 +232,7 @@ pub struct Airline {
 
 /// Пассажир.
 #[allow(dead_code)]
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Deserialize, Serialize, Debug, Default)]
 pub struct Passenger {
     pub first_name: String,
     pub last_name: String,
@@ -240,7 +240,7 @@ pub struct Passenger {
 
 /// Сегмент рейса.
 #[allow(dead_code)]
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Deserialize, Serialize, Debug, Default)]
 pub struct Leg {
     pub departure_airport: String,
     pub destination_airport: String,
@@ -252,7 +252,7 @@ pub struct Leg {
 
 /// Распределение суммы между суб-аккаунтами (сплит-платёж).
 #[allow(dead_code)]
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Deserialize, Serialize, Debug, Default)]
 pub struct Transfer {
     /// ID аккаунта-получателя.
     pub account_id: String,
